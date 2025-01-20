@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubungi Kami - Artikel Website</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" style="display: flex; align-items: center; text-decoration: none; color: rgb(255, 255, 255);">
+                <img src="img/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+            </a>
+            <div style="margin-left: auto;">
+                <a href="beranda.html">Beranda</a>
+                <a href="tentang_kami.html">Tentang Kami</a>
+                <a href="hubungi_kami.html">Hubungi Kami</a>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>Hubungi Kami</h2>
+        <p>Jika Anda memiliki pertanyaan atau masukan, silakan hubungi kami melalui email: info@artikelwebsite.com</p>
+
+        <h3>Kirim saran</h3>
+        <p>kirimkan saran dan kritikan jika website kami tidak dapat memuaskan kenyamanan menjelajah anda di dalam website kami</p>
+        <form action="send_message.php" method="post">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="message">Pesan:</label>
+            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+            <input type="submit" value="Kirim Pesan">
+        </form>
+
+        <h3>Komentari Artikel</h3>
+        <form action="send_comment.php" method="post" onsubmit="return validateEmail()">
+            <label for="article_name">Nama Artikel:</label>
+            <input type="text" id="article_name" name="article_name" required><br><br>
+
+            <label for="user_email">Email:</label>
+            <input type="email" id="user_email" name="user_email" required><br><br>
+
+            <label for="comment">Komentar:</label>
+            <textarea id="comment" name="comment" rows="4" required></textarea><br><br>
+
+            <input type="submit" value="Kirim Komentar">
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2025 Artikel Website. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function validateEmail() {
+            const email = document.getElementById('user_email').value;
+            if (!email) {
+                alert("Email harus diisi untuk mengomentari artikel.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
